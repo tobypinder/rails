@@ -177,7 +177,7 @@ module ActiveRecord
       # If this is a StrongParameters hash, and access to inheritance_column is not permitted,
       # this will ignore the inheritance column and return nil
       def subclass_from_attributes?(attrs)
-        columns_hash.include?(inheritance_column) && attrs.is_a?(Hash)
+        attrs.is_a?(Hash) && columns_hash.include?(inheritance_column)
       end
 
       def subclass_from_attributes(attrs)
